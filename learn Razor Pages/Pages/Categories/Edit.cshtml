@@ -1,0 +1,25 @@
+﻿@page
+@model learn_Razor_Pages.Pages.Categories.EditModel
+@{
+}
+<h1>Chỉnh sửa Danh mục</h1>
+
+<form method="post">
+    <input type="hidden" asp-for="Category.Id" />
+    <div class="form-group">
+        <label asp-for="Category.Name">Tên</label>
+        <input asp-for="Category.Name" class="form-control" />
+        <span asp-validation-for="Category.Name" class="text-danger"></span>
+    </div>
+    <div class="form-group">
+        <label asp-for="Category.DisplayOrder">Thứ tự hiển thị</label>
+        <input asp-for="Category.DisplayOrder" class="form-control" />
+        <span asp-validation-for="Category.DisplayOrder" class="text-danger"></span>
+    </div>
+    <button type="submit" class="btn btn-primary">Lưu</button>
+    <a asp-page="/Categories/Index" class="btn btn-secondary">Quay lại danh sách</a>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}

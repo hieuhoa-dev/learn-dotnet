@@ -1,0 +1,12 @@
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.csproj.AssemblyReference.cache
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.AssemblyInfoInputs.cache
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.AssemblyInfo.cs
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.csproj.CoreCompileInputs.cache
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.MvcApplicationPartsAssemblyInfo.cs
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.RazorAssemblyInfo.cache
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.RazorAssemblyInfo.cs
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.dll
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\refint\learn Razor Pages.dll
+C:\Users\Lenovo\Downloads\learn .net core\learn Razor Pages\obj\Debug\net8.0\learn Razor Pages.pdb
