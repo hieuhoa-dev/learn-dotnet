@@ -1,5 +1,6 @@
 using DataAccess.Repository;
 using learn_dotnet_core.DataAccess.Data;
+using learn_dotnet_core.DataAccess.Repository;
 using learn_dotnet_core.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
@@ -15,7 +16,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 );
 
 // Register the repository service
-builder.Services.AddScoped<IUnitOfWork, IUnitOfWork>();
+builder.Services.AddScoped<IUnitOfWork, UnitOfWork>();
 
 var app = builder.Build();
 
@@ -36,6 +37,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Home}/{action=Index}/{id?}");
+    pattern: "{area=Customer}/{controller=Home}/{action=Index}/{id?}");
 
 app.Run();

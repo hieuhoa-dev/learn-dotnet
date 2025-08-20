@@ -9,6 +9,7 @@ namespace learn_dotnet_core.DataAccess.Repository.IRepository
     public interface IUnitOfWork
     {
         ICatogoryRepository Category{ get; }
+        IProductRepository Product{ get; }
         void Save();
     }
 }

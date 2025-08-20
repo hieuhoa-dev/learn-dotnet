@@ -3,22 +3,23 @@ using Microsoft.AspNetCore.Mvc;
 using learn_dotnet_core.Models;
 using learn_dotnet_core.DataAccess.Repository.IRepository;
 
-namespace learn_dotnet_core.Controllers
+namespace learn_.net_core.Areas.Admin.Controllers
 {
-    public class CategoryController : Controller
+    [Area("Admin")]
+    public class ProductController : Controller
     {
         private readonly IUnitOfWork _unitOfWork;
 
-        public CategoryController(IUnitOfWork db)
+        public ProductController(IUnitOfWork db)
         {
             _unitOfWork = db;
         }
 
         public IActionResult Index()
         {
-            List<Category> categoryList = _unitOfWork.Category.GetAll().ToList();
+            List<Product> productList = _unitOfWork.Product.GetAll().ToList();
 
-            return View(categoryList);
+            return View(productList);
         }
 
         public IActionResult Create()
@@ -27,18 +28,13 @@ namespace learn_dotnet_core.Controllers
         }
 
         [HttpPost]
-        public IActionResult Create(Category category)
+        public IActionResult Create(Product category)
         {
-            if (category.Name.ToLower() == category.DisplayOrder.ToString())
-            {
-                ModelState.AddModelError("Name", "Tên danh mục không được trùng với thứ tự hiển thị");
-            }
-
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Add(category);
+                _unitOfWork.Product.Add(category);
                 _unitOfWork.Save();
-                TempData["Success"] = "Category created successfully";
+                TempData["Success"] = "Product created successfully";
                 return RedirectToAction("Index");
             }
             return View(category);
@@ -51,7 +47,7 @@ namespace learn_dotnet_core.Controllers
                 return NotFound();
             }
             //var categoryFromDb = _db.Categories.Find(id);
-            var categoryFromDb = _unitOfWork.Category.Get(u => u.Id == id);
+            var categoryFromDb = _unitOfWork.Product.Get(u => u.Id == id);
 
             if (categoryFromDb == null)
             {
@@ -61,22 +57,22 @@ namespace learn_dotnet_core.Controllers
         }
 
         [HttpPost]
-        public IActionResult Edit(Category category)
+        public IActionResult Edit(Product obj)
         {
             if (ModelState.IsValid)
             {
-                _unitOfWork.Category.Add(category);
+                _unitOfWork.Product.Add(obj);
                 _unitOfWork.Save();
-                TempData["Success"] = "Category updated successfully";
+                TempData["Success"] = "Product updated successfully";
                 return RedirectToAction("Index");
             }
-            return View(category);
+            return View(obj);
         }
 
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var categoryObj = _unitOfWork.Category.Get(u => u.Id == id);
+            var categoryObj = _unitOfWork.Product.Get(u => u.Id == id);
             if (categoryObj == null)
             {
                 return NotFound();
@@ -88,15 +84,15 @@ namespace learn_dotnet_core.Controllers
         [ActionName("Delete")]
         public IActionResult DeletePost(int id)
         {
-            var categoryObj = _unitOfWork.Category.Get(u => u.Id == id);
+            var obj = _unitOfWork.Product.Get(u => u.Id == id);
 
-            if (categoryObj == null)
+            if (obj == null)
             {
                 return NotFound();
             }
-            _unitOfWork.Category.Remove(categoryObj);
+            _unitOfWork.Product.Remove(obj);
             _unitOfWork.Save();
-            TempData["Success"] = "Category deleted successfully";
+            TempData["Success"] = "Product deleted successfully";
             return RedirectToAction("Index");
         }
     }

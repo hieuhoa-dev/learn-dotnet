@@ -2,8 +2,9 @@ using learn_dotnet_core.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
-namespace learn_dotnet_core.Controllers
+namespace learn_.net_core.Areas.Customer.Controllers
 {
+    [Area("Customer")]
     public class HomeController : Controller
     {
         private readonly ILogger<HomeController> _logger;
