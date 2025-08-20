@@ -11,9 +11,5 @@ namespace learn_dotnet_core.DataAccess.Repository.IRepository
     {
         void Update(Category category);
         // This method is used to update a category entity.
-
-        void Save();
-        // Additional methods specific to Category can be added here
-
     }
 }

@@ -15,7 +15,7 @@ builder.Services.AddDbContext<ApplicationDbContext>(
 );
 
 // Register the repository service
-builder.Services.AddScoped<ICatogoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IUnitOfWork, IUnitOfWork>();
 
 var app = builder.Build();
 
