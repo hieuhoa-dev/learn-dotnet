@@ -1,4 +1,6 @@
+using DataAccess.Repository;
 using learn_dotnet_core.DataAccess.Data;
+using learn_dotnet_core.DataAccess.Repository.IRepository;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -11,6 +13,9 @@ builder.Services.AddDbContext<ApplicationDbContext>(
         builder.Configuration.GetConnectionString("DefaultConnection")
     )
 );
+
+// Register the repository service
+builder.Services.AddScoped<ICatogoryRepository, CategoryRepository>();
 
 var app = builder.Build();
 

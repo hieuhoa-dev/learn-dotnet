@@ -1,21 +1,22 @@
 ﻿using learn_dotnet_core.DataAccess.Data;
 using Microsoft.AspNetCore.Mvc;
 using learn_dotnet_core.Models;
+using learn_dotnet_core.DataAccess.Repository.IRepository;
 
 namespace learn_dotnet_core.Controllers
 {
     public class CategoryController : Controller
     {
-        private readonly ApplicationDbContext _db;
+        private readonly ICatogoryRepository _categoryRepo;
 
-        public CategoryController(ApplicationDbContext db)
+        public CategoryController(ICatogoryRepository db)
         {
-            _db = db;
+            _categoryRepo = db;
         }
 
         public IActionResult Index()
         {
-            List<Category> categoryList = _db.Categories.ToList();
+            List<Category> categoryList = _categoryRepo.GetAll().ToList();
 
             return View(categoryList);
         }
@@ -35,8 +36,8 @@ namespace learn_dotnet_core.Controllers
 
             if (ModelState.IsValid)
             {
-                _db.Categories.Add(category);
-                _db.SaveChanges();
+                _categoryRepo.Add(category);
+                _categoryRepo.Save();
                 TempData["Success"] = "Category created successfully";
                 return RedirectToAction("Index");
             }
@@ -49,7 +50,9 @@ namespace learn_dotnet_core.Controllers
             {
                 return NotFound();
             }
-            var categoryFromDb = _db.Categories.Find(id);
+            //var categoryFromDb = _db.Categories.Find(id);
+            var categoryFromDb = _categoryRepo.Get(u => u.Id == id);
+
             if (categoryFromDb == null)
             {
                 return NotFound();
@@ -62,8 +65,8 @@ namespace learn_dotnet_core.Controllers
         {
             if (ModelState.IsValid)
             {
-                _db.Categories.Update(category);
-                _db.SaveChanges();
+                _categoryRepo.Add(category);
+                _categoryRepo.Save();
                 TempData["Success"] = "Category updated successfully";
                 return RedirectToAction("Index");
             }
@@ -73,7 +76,7 @@ namespace learn_dotnet_core.Controllers
         [HttpGet]
         public IActionResult Delete(int id)
         {
-            var categoryObj = _db.Categories.Find(id);
+            var categoryObj = _categoryRepo.Get(u => u.Id == id);
             if (categoryObj == null)
             {
                 return NotFound();
@@ -85,13 +88,14 @@ namespace learn_dotnet_core.Controllers
         [ActionName("Delete")]
         public IActionResult DeletePost(int id)
         {
-            var categoryObj = _db.Categories.Find(id);
+            var categoryObj = _categoryRepo.Get(u => u.Id == id);
+
             if (categoryObj == null)
             {
                 return NotFound();
             }
-            _db.Categories.Remove(categoryObj);
-            _db.SaveChanges();
+            _categoryRepo.Remove(categoryObj);
+            _categoryRepo.Save();
             TempData["Success"] = "Category deleted successfully";
             return RedirectToAction("Index");
         }
