@@ -17,6 +17,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\learn .net core\learn_net_core.csproj" />
+    <ProjectReference Include="..\learn .net core\learn_dotnet_core.csproj" />
   </ItemGroup>
 </Project>

@@ -2801,23 +2801,50 @@
           }
         }
       },
-      "learn_net_core/1.0.0": {
+      "DataAccess/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v8.0",
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+          "Models": "1.0.0"
         },
         "compile": {
-          "bin/placeholder/learn_net_core.dll": {}
+          "bin/placeholder/DataAccess.dll": {}
         },
         "runtime": {
-          "bin/placeholder/learn_net_core.dll": {}
+          "bin/placeholder/DataAccess.dll": {}
+        }
+      },
+      "learn_dotnet_core/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "dependencies": {
+          "DataAccess": "1.0.0",
+          "Microsoft.EntityFrameworkCore": "9.0.8",
+          "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
+          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7",
+          "Models": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/learn_dotnet_core.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/learn_dotnet_core.dll": {}
         },
         "frameworkReferences": [
           "Microsoft.AspNetCore.App"
         ]
+      },
+      "Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v8.0",
+        "compile": {
+          "bin/placeholder/Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Models.dll": {}
+        }
       }
     }
   },
@@ -7759,10 +7786,20 @@
         "useSharedDesignerContext.txt"
       ]
     },
-    "learn_net_core/1.0.0": {
+    "DataAccess/1.0.0": {
       "type": "project",
-      "path": "../learn .net core/learn_net_core.csproj",
-      "msbuildProject": "../learn .net core/learn_net_core.csproj"
+      "path": "../DataAccess/DataAccess.csproj",
+      "msbuildProject": "../DataAccess/DataAccess.csproj"
+    },
+    "learn_dotnet_core/1.0.0": {
+      "type": "project",
+      "path": "../learn .net core/learn_dotnet_core.csproj",
+      "msbuildProject": "../learn .net core/learn_dotnet_core.csproj"
+    },
+    "Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Models.csproj",
+      "msbuildProject": "../Models/Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -7770,7 +7807,7 @@
       "Microsoft.EntityFrameworkCore >= 9.0.8",
       "Microsoft.EntityFrameworkCore.SqlServer >= 9.0.8",
       "Microsoft.EntityFrameworkCore.Tools >= 9.0.8",
-      "learn_net_core >= 1.0.0"
+      "learn_dotnet_core >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -7801,8 +7838,8 @@
         "net8.0": {
           "targetAlias": "net8.0",
           "projectReferences": {
-            "C:\\Users\\Lenovo\\Downloads\\learn .net core\\learn .net core\\learn_net_core.csproj": {
-              "projectPath": "C:\\Users\\Lenovo\\Downloads\\learn .net core\\learn .net core\\learn_net_core.csproj"
+            "C:\\Users\\Lenovo\\Downloads\\learn .net core\\learn .net core\\learn_dotnet_core.csproj": {
+              "projectPath": "C:\\Users\\Lenovo\\Downloads\\learn .net core\\learn .net core\\learn_dotnet_core.csproj"
             }
           }
         }

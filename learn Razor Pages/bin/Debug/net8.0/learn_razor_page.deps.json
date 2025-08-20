@@ -11,7 +11,7 @@
           "Microsoft.EntityFrameworkCore": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
           "Microsoft.EntityFrameworkCore.Tools": "9.0.8",
-          "learn_net_core": "1.0.0"
+          "learn_dotnet_core": "1.0.0"
         },
         "runtime": {
           "learn_razor_page.dll": {}
@@ -2047,14 +2047,19 @@
           }
         }
       },
-      "learn_net_core/1.0.0": {
+      "DataAccess/1.0.0": {
         "dependencies": {
           "Microsoft.EntityFrameworkCore": "9.0.8",
           "Microsoft.EntityFrameworkCore.SqlServer": "9.0.8",
-          "Microsoft.VisualStudio.Web.CodeGeneration.Design": "8.0.7"
+          "Models": "1.0.0"
         },
         "runtime": {
-          "learn_net_core.dll": {}
+          "DataAccess.dll": {}
+        }
+      },
+      "Models/1.0.0": {
+        "runtime": {
+          "Models.dll": {}
         }
       }
     }
@@ -3185,7 +3190,12 @@
       "path": "system.windows.extensions/7.0.0",
       "hashPath": "system.windows.extensions.7.0.0.nupkg.sha512"
     },
-    "learn_net_core/1.0.0": {
+    "DataAccess/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Models/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
