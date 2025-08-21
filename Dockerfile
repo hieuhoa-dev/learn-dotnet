@@ -6,12 +6,12 @@ WORKDIR /src
 
 # Copy csproj và restore trước (tối ưu cache)
 COPY *.sln .
-COPY YourProject/*.csproj ./YourProject/
+COPY LearnDotnetCore/*.csproj ./LearnDotnetCore/
 RUN dotnet restore
 
 # Copy toàn bộ và build
 COPY . .
-WORKDIR /src/YourProject
+WORKDIR /src/LearnDotnetCore
 RUN dotnet publish -c Release -o /app/publish
 
 # ==============================
@@ -25,4 +25,4 @@ COPY --from=build /app/publish .
 ENV ConnectionStrings__DefaultConnection="Server=sqlserver;Database=MyDb;User Id=sa;Password=Your_password123;TrustServerCertificate=True;"
 
 EXPOSE 8080
-ENTRYPOINT ["dotnet", "YourProject.dll"]
+ENTRYPOINT ["dotnet", "learn_dotnet_core.dll"]
